@@ -1,7 +1,7 @@
 /**
  * Represents one person receiving deferred action for childhood arrivals (DACA).
  * 
- * <TODO add @author info here for all group-mates!>
+ * <@author Sage Yosick
  *
  * @version 1.2
  **/
@@ -46,6 +46,7 @@
 
 public class DACArecipient
 {
+  public static final String DEFAULT_SURNAME = "Unknown";
 	/***** INSTANCE VARIABLES *****/
   private String surname;
   private String givenName;
@@ -56,10 +57,90 @@ public class DACArecipient
 	
 
 	//TODO: don't forget to copy all your methods from the previous labs!
+  public String getSurname() {
+    return surname;
+  }
+  public String getGivenName() {
+    return givenName;
+  }
+  public String getUscisNumber() {
+    return uscisNumber;
+  }
+  public String getCountryOfOrigin() {
+    return countryOfOrigin;
+  }
+  public int getBirthday() {
+    return birthday;
+  }
+  public int getValidFromDate() {
+    return validFromDate;
+  }
+  public int getExpirationDate() {
+    return expirationDate;
+  }
+  public char getSex() {
+    return sex;
+  }
+
+  //SETTERS
+  public void setSurname(String surname) {
+    this.surname = surname;
+  }
+  public void setGivenName(String givenName) {
+    this.givenName = givenName;
+  }
+  public void setUscisNumber(String uscisNumber) {
+    this.uscisNumber = uscisNumber;
+  }
+  public void setCountryOfOrigin(String countryOfOrigin) {
+    this.countryOfOrigin = countryOfOrigin;
+  }
+  public void setBirthday(int birthday) {
+    this.birthday = birthday;
+  }
+  public void setValidFromDate(int validFromDate) {
+    this.validFromDate = validFromDate;
+  }
+  public void setExpirationDate(int expirationDate) {
+    this.expirationDate = expirationDate;
+  }
+  public void setSex(char sex) {
+    this.sex = sex;
+  }
+
+  //SET ALL METHOD
+  public void setAll(String surname, String givenName, String uscisNumber, String countryOfOrigin, int birthday, int validFromDate, int expirationDate, char sex) {
+    this.setSurname(surname);
+    this.setGivenName(givenName);
+    this.setUscisNumber(uscisNumber);
+    this.setCountryOfOrigin(countryOfOrigin);
+    this.setBirthday(birthday);
+    this.setValidFromDate(validFromDate);
+    this.setExpirationDate(expirationDate);
+    this.setSex(sex);
+  }
 	
   /**** CONSTRUCTORS ****/
   //TODO: Write the no-argument constructor and full constructor. Remember to include documentation for each method.
+  public DACArecipient() 
+  {
+    //surname = "Unknown"; givenName = "Unknown"; uscisNumber = "Unknown"; countryOfOrigin = "Unknown"; birthday = 2415021; validFromDate = 2415021; expirationDate = 2415021; sex = 'X'; 
+    setAll(DEFAULT_SURNAME, "Unknown", "Unknown", "Unknown", 2415021, 2415021, 2415021, 'X');
+  }
 
+  public DACArecipient(String surname, String givenName, String uscisNumber, String countryOfOrigin, int birthday, int validFromDate, int expirationDate, char sex)
+  {
+    /*this.surname = surname; 
+    this.givenName = givenName;
+    this.uscisNumber = uscisNumber;
+    this.countryOfOrigin = countryOfOrigin;
+    this.birthday = birthday;
+    this.validFromDate = validFromDate;
+    this.expirationDate = expirationDate;
+    this.sex = sex;*/
+
+    setAll(surname, givenName, uscisNumber, countryOfOrigin, birthday, validFromDate, expirationDate, sex);
+  }
 
 	/***** OTHER REQUIRED METHODS *****/
   public String toString()
